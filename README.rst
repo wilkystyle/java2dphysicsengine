@@ -14,6 +14,7 @@ About this project
 **See it in action!**
 
 `Project after 16 hrs <http://www.youtube.com/watch?v=NFiMOjA8Vcc>`_
+
 `Project after 9 hrs <http://www.youtube.com/watch?v=TlX4m44eFzM>`_
 
 **Project brief:**
@@ -28,8 +29,11 @@ The above procedure will provide the needed resulting velocity for each object, 
 
 
 ``Minimum Distance - The minimum distance allowed between the two objects. This is the sum of the two objects' radii.``
+
 ``Distance Between - This is the current distance between the centers of the objects.``
+
 ``Overlap Distance - This is (Minimum Distance - Distance Between).``
+
 ``Distance to Move - (Overlap Distance / 2). This is the amount of distance each needs to move in the opposite direction from the other in order to restore a "touching" scenario, as opposed to an "overlapping" scenario.``
 
 So now we have Distance to Move, a magnitude in two dimensions, and we know the collision angle. The way the angle is calculated is such that the current object is on the x-axis to the left, and the other object is on the x-axis to the right. We simply move the current object in the negative direction along the collision coordinate system's x-axis by a magnitude of (-Distance to Move), and the other object along the same axis by a magnitude of (+Distance to Move). We now have not only the correct velocity, but the corrected position as well.
